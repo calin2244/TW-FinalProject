@@ -45,6 +45,9 @@ const onInputChange = () => {
             filteredNames.push(countryName);
     });
 
+    if(filteredNames.length == 0)
+        removeAutocompleteDropdown();
+
     //console.log(filteredNames);
     createAutocompleteDropdown(filteredNames);
 }
@@ -85,3 +88,13 @@ const onEntryClick = (event) => {
 
     removeAutocompleteDropdown();
 }
+
+document.querySelector("#search-button").addEventListener("click", removeAutocompleteDropdown);
+
+inputElement.addEventListener("keypress", function(event){
+
+    if(event.key === "Enter"){
+        event.preventDefault();
+        document.querySelector("#search-button").click();
+    }
+});

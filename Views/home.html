@@ -30,7 +30,6 @@
         <main>
             <section class="section-input">
                 <h2>Get the latest weather updates</h2>
-                <form action="">
                     <div class="autocomplete-wrapper scrollbar" id="autocomplete-wrapper">
                         <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>           
                         <!-- <ul class="autocomplete-list" id="country-list">
@@ -41,31 +40,27 @@
                         </ul>  -->
                         <button type="submit" id="search-button" class="search-button" >Search</button>
                     </div>
-                </form>
             </section>
         </main>
         <div class="card">
             <div class="weather">
                 <h2 class="city" id="city">
-                    Weather in Tokyo
+                    Your weather, anywhere in the world
                 </h2>
-
                 <div class="flex-container">
-                    <div class="temp" id="temperature">
-                        21 Celsius
-                    </div>
+                    <div class="temp" id="temperature"></div>
                     <img src="" alt="" class="icon" id="icon"/>
-                </div>
-                <div class="description" id="weather-description">
-                    broken clouds
-                </div>
-
-                <div class="humidity" id="humidity">
-                    uscat
+                </div>  
+                <div class="weather-description" id="weather-description">
+                    Type any city/country in the input field above.
                 </div>
 
+                <div class="flex-container-description">    
+                    <div class="humidity" id="humidity"></div>
+                    <div class="pressure" id="pressure"></div>
+                    <div class="feels-like" id="feels-like"></div>    
+                </div>
                 <div class="wind" id="wind">
-                    bate vantul
                 </div>
             </div>
         </div>
