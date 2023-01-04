@@ -1,0 +1,220 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* body{
+  background-color: #616192;
+} */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  /* background-color: #1D1D37; */
+
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+}
+
+header h1{
+  font-size: 2em;
+}
+
+header nav ul{
+  display: flex;
+  list-style: none;
+}
+
+header nav li{
+  margin: 0 10px;
+  padding: 0;
+}
+
+header nav a{
+  text-decoration: none;
+  color: #fff;
+}
+
+header nav a:hover{
+  color: green;
+}
+
+/* Responsive styles */
+@media (max-width: 768px){
+  header h1{
+    font-size: 1.5em;
+  }
+
+  header nav ul{
+    flex-direction: column;
+  }
+
+  header nav li{
+    margin: 10px 0;
+  }
+}
+
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.section-input{
+  flex: 1 0 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.section-input h2{
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.section-input form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-input input{
+  font-size: 1.5em;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  transition: all 0.1s ease-in-out;
+}
+
+.section-input input:focus{
+  outline: none !important;
+  border: 2px solid #333;
+}
+
+.search-button{
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 2px solid #333;
+  background-color: #333;
+  font-weight: bold;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  transition: 0.2s all;
+}
+
+.search-button:hover{
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+}
+
+footer{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+}
+
+header,
+footer{
+  width: 100%;
+}
+
+.credits{
+  display: flex;
+  justify-content: right;
+  text-decoration: underline;
+}
+
+.weather--morning {
+  --hi-1: #fde197;
+  --hi-2: #f4b08b;
+  --hi-3: #c469b9;
+  --hi-4: #5e24b2;
+  --hi-5: #411389;
+  --hi-6: transparent;
+  --hi-7: #fde197;
+}
+
+.weather--noon {
+  --hi-1: #ffcb71;
+  --hi-2: #c8cc58;
+  --hi-3: #95c765;
+  --hi-4: #008671;
+  --hi-5: #03a872;
+  --hi-6: #008671;
+  --hi-7: #ffffff;
+}
+
+.weather--night {
+  --hi-1: #7bcdff;
+  --hi-2: #354694;
+  --hi-3: #1c2e76;
+  --hi-4: transparent;
+  --hi-5: #171f65;
+  --hi-6: #0a1949;
+  --hi-7: #7bcdff;
+}
+
+.autocomplete-list{
+  position: absolute;
+  list-style-type: none;
+  background-color: white;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 40vh;
+  background-color: white;
+  border: 1px solid black;
+  margin: unset;
+  padding: unset;
+  width: 100%;
+}
+
+.autocomplete-list li{
+  /* border: 1px solid #e9e9e9; */
+  border-bottom: 2px solid plum;
+}
+
+.autocomplete-list button{
+  cursor: pointer;
+  display: flex;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  border: unset;
+  color: rgb(177, 123, 177);
+  font-weight: bold;  
+  background-color: white;
+}
+
+.autocomplete-wrapper{
+  display: inline-block;
+  position: relative;
+}
+
+.scroller {
+  width: 300px;
+  height: 100px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}

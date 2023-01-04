@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>weather</title>
+    <link rel="stylesheet" href="../styles/home.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Weather App</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <section class="section-input">
+                <h2>Get the latest weather updates</h2>
+                <form action="">
+                    <div class="autocomplete-wrapper scrollbar" id="autocomplete-wrapper">
+                        <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>           
+                        <!-- <ul class="autocomplete-list" id="country-list">
+                            <li>
+                                <button>
+                                    <li>Fetching Countries..</li>
+                                </button>
+                        </ul>  -->
+                        <button type="submit" id="search-button" class="search-button" >Search</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p class="credits">
+                Calin's Weather Map
+            </p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="../scripts/fetchCountries.js"></script>
+</body>
+</html>
