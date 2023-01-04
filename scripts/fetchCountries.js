@@ -10,12 +10,11 @@ let countries = [];
 const listElement = document.querySelector("#country-list");
 const inputElement = document.querySelector("#country-input");
 
-// const fetchCountries = () => {
+// const fetchCountrie = () => {
 //     fetch('https://countries-cities.p.rapidapi.com/location/country/list', options)
 // 	.then(response => response.json())
-// 	.then(data => {
-//         countries = data;
-//         loadData(countries, countryListElement);
+// 	.then(response => {
+//         console.log(response.countries.properties);
 //     }).catch(err => console.error(err));
 // }
 

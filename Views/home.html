@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>weather</title>
     <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -43,6 +44,32 @@
                 </form>
             </section>
         </main>
+        <div class="card">
+            <div class="weather">
+                <h2 class="city" id="city">
+                    Weather in Tokyo
+                </h2>
+
+                <div class="flex-container">
+                    <div class="temp" id="temperature">
+                        21 Celsius
+                    </div>
+                    <img src="" alt="" class="icon" id="icon"/>
+                </div>
+                <div class="description" id="weather-description">
+                    broken clouds
+                </div>
+
+                <div class="humidity" id="humidity">
+                    uscat
+                </div>
+
+                <div class="wind" id="wind">
+                    bate vantul
+                </div>
+            </div>
+        </div>
+
         <footer>
             <p class="credits">
                 Calin's Weather Map
@@ -51,5 +78,6 @@
     </div>
 
     <script type="text/javascript" src="../scripts/fetchCountries.js"></script>
+    <script type="text/javascript" src="../scripts/fetchWeather.js"></script>
 </body>
 </html>

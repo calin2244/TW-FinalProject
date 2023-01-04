@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +15,6 @@
   margin: auto;
   padding: 0 20px;
   /* background-color: #1D1D37; */
-
 }
 
 
@@ -77,6 +78,8 @@ main{
   text-align: center;
   padding: 20px;
   background-color: #fff;
+  border-radius: 15px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .section-input h2{
@@ -93,9 +96,12 @@ main{
 .section-input input{
   font-size: 1.5em;
   padding: 10px 10px;
-  border: none;
+  margin-right: -5px;
   border-radius: 5px 0 0 5px;
-  transition: all 0.1s ease-in-out;
+  border: 2px solid #333;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-family: 'Josefin Sans';
 }
 
 .section-input input:focus{
@@ -113,6 +119,7 @@ main{
   padding: 10px 20px;
   font-size: 1.5em;
   transition: 0.2s all;
+  font-family: 'Josefin Sans';
 }
 
 .search-button:hover{
@@ -182,10 +189,11 @@ footer{
   overflow-y: auto;
   max-height: 40vh;
   background-color: white;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-top: none;
   margin: unset;
-  padding: unset;
   width: 100%;
+  border-radius: 15px;
 }
 
 .autocomplete-list li{
@@ -195,15 +203,20 @@ footer{
 
 .autocomplete-list button{
   cursor: pointer;
-  display: flex;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  display: block;
+  padding: 1em;
   width: 100%;
   border: unset;
   color: rgb(177, 123, 177);
   font-weight: bold;  
   background-color: white;
+  transition: all 0.15s;
+  font-size: 18px;
+}
+
+.autocomplete-list button:hover{
+  background-color: black;
+  color: white;
 }
 
 .autocomplete-wrapper{
@@ -217,4 +230,49 @@ footer{
   overflow-y: scroll;
   scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
+}
+
+
+.card{
+  position: relative;
+  border: 2px solid black;
+  border-radius: 15px;
+  color: white;
+  margin: auto;
+  margin-top: 80px;
+  padding: 1em;
+  padding-right: 10px;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.city{
+  text-align:  center;
+  color: plum;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 0.1rem;
+  padding-bottom: 30px;
+  font-size: 50px;
+}
+
+.temp{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 40px;
+  padding-bottom: 30px;
+  text-align: center;
+  padding-right: 20px;
+}
+
+.icon{
+  display: inline;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+body{
+  background-color: rgb(194, 145, 194);
 }
