@@ -31,9 +31,11 @@ const displayWeather = (data) => {
 
     const {name} = data;
     const { icon, description } = data.weather[0];
-    const { temp, humidity, pressure, feels_like } = data.main;
+    let { temp, humidity, pressure, feels_like } = data.main;
     const { speed } = data.wind;
     const { country } = data.sys;
+
+    console.log(checkBox.checked);
 
     var index = 0;
     for(let i = 0; i < countryCode.length; i++){
@@ -48,15 +50,32 @@ const displayWeather = (data) => {
 
     const currentFlag = flagEmojis[index];
 
+    var element = document.querySelector("#city");
+    element.style.color = null;
+
+    let articol = name === "United States of America" ? "the " : "";
+
+    let tempSymbol = "℃";
+    //transformam temperatura in ferenheit
+    if(checkBox.checked){
+        temp = temp * 1.8 + 32;
+        tempSymbol = "°F";
+        feels_like = feels_like * 1.8 + 32;
+    }
+
+
     // console.log(name, icon, description, temp, humidity, speed, feels_like, pressure);
-    document.querySelector("#city").innerText = currentFlag + "Weather in " + name + currentFlag;
-    document.querySelector("#temperature").innerText = Math.floor(temp) + "℃";
+    document.querySelector("#city").innerText = currentFlag + "Weather in " + articol + name + currentFlag;
+    document.querySelector("#temperature").innerText = Math.floor(temp) + tempSymbol;
     document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector("#weather-description").innerText = "How is it outside: " + description.toUpperCase();
     document.querySelector("#humidity").innerText = "Humidity: " + humidity;
-    document.querySelector("#pressure").innerText = "Pressure: " + pressure;
-    document.querySelector("#feels-like").innerText = "Feels like: " + feels_like;
+    document.querySelector("#pressure").innerText = "Pressure: " + pressure + " kPa";
+    document.querySelector("#feels-like").innerText = "Feels like: " + Math.ceil(feels_like) + tempSymbol;
     document.querySelector("#wind").innerText = "Speed of wind: " + speed + "km/h" + "🌬️";
+    
+    //Loading
+    document.querySelector(".weather").classList.remove("weather-fetching");
 }
 
 const searchButton = () => {
@@ -65,19 +84,19 @@ const searchButton = () => {
 
 document.querySelector("#search-button").addEventListener("click", searchButton);
 
-// Get the input field
-var inputField = document.querySelector("#country-input");
+const checkBox = document.querySelector("#checkbox");
+checkBox.checked = false;
+document.querySelector(".ferenheit").style.color = "white";
 
-// Execute a function when the user presses a key on the keyboard
-input.addEventListener("keypress", function(event) {
-  // If the user presses the "Enter" key on the keyboard
-    if (event.key === "Enter") {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    document.querySelector("#search-button").click();
+console.log(checkBox.checked);
 
+checkBox.addEventListener("click", function(){
+    if(!checkBox.checked){
+        document.querySelector(".ferenheit").style.color = "white";
+        fetchWeather(inputElement.value);
     }
-}); 
-
-fetchWeather("Bacau");
+    else{
+        document.querySelector(".ferenheit").style.color = "plum";
+        fetchWeather(inputElement.value);
+    }
+});

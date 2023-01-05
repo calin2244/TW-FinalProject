@@ -10,6 +10,12 @@
   background-color: #616192;
 } */
 
+body {
+  margin :0;
+  height:100%;
+  background-color: rgb(194, 145, 194);
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
@@ -77,14 +83,16 @@ main{
   flex: 1 0 100%;
   text-align: center;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 15px;
+  background-color: black;
   font-family: 'Josefin Sans', sans-serif;
+  border-top: 2px solid white;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .section-input h2{
-  font-size: 3em;
-  margin-bottom: 20px;
+  font-size: 1.2em;
+  padding-top: 12px;
 }
 
 .section-input form {
@@ -187,7 +195,7 @@ footer{
   list-style-type: none;
   background-color: white;
   overflow-y: auto;
-  max-height: 40vh;
+  max-height: 20vh;
   background-color: white;
   border: 2px solid black;
   border-top: none;
@@ -240,11 +248,16 @@ footer{
   border-radius: 15px;
   color: white;
   margin: auto;
-  margin-top: 80px;
+  margin-top: -20px;
   padding: 1em;
   padding-right: 10px;
   width: 55%;
   background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.weather-fetching{
+  visibility: hidden;
 }
 
 .city{
@@ -265,7 +278,7 @@ footer{
 
 .icon{
   margin-bottom: auto;
-  margin-top: -19px;
+  margin-top: -20px;
 }
 
 .weather-description{
@@ -304,6 +317,26 @@ footer{
   justify-content: center;
 }
 
-body{
-  background-color: rgb(194, 145, 194);
+.slogan{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* STAR FAVORITE CSS */
+/* for setting the checkbox in the center */
+
+/* checkbox */
+.checkbox{
+  height:20px;
+  width:20px;
+  accent-color: plum;
+  margin-top: 20px;
+  margin-bottom: -100px;
+}
+
+.ferenheit{
+
+  font-family: 'Josefin Sans';
+  display: block;
+  margin-bottom: -20px;
+  color: plum;
 }

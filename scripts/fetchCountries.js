@@ -93,7 +93,7 @@ document.querySelector("#search-button").addEventListener("click", removeAutocom
 
 inputElement.addEventListener("keypress", function(event){
 
-    if(event.key === "Enter"){
+    if(event.key === "Escape" || event.key === "Enter"){
         event.preventDefault();
         document.querySelector("#search-button").click();
     }

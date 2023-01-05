@@ -12,6 +12,12 @@
 <body>
     <header>
         <h1>Weather App</h1>
+        <h2>
+            <div class="slogan">
+                Your weather, anywhere in the world
+            </div>        
+
+        </h2>
         <nav>
             <ul>
                 <li>
@@ -28,23 +34,23 @@
     </header>
     <div class="container">
         <main>
-            <section class="section-input">
+            <!-- <section class="section-input">
                 <h2>Get the latest weather updates</h2>
                     <div class="autocomplete-wrapper scrollbar" id="autocomplete-wrapper">
-                        <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>           
-                        <!-- <ul class="autocomplete-list" id="country-list">
+                        <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>    
+                            <ul class="autocomplete-list" id="country-list">
                             <li>
                                 <button>
                                     <li>Fetching Countries..</li>
                                 </button>
-                        </ul>  -->
+                        </ul>  
                         <button type="submit" id="search-button" class="search-button" >Search</button>
                     </div>
-            </section>
+            </section> -->
         </main>
         <div class="card">
             <div class="weather">
-                <h2 class="city" id="city">
+                <h2 class="city" id="city" style="color: white">
                     Your weather, anywhere in the world
                 </h2>
                 <div class="flex-container">
@@ -56,12 +62,27 @@
                 </div>
 
                 <div class="flex-container-description">    
-                    <div class="humidity" id="humidity"></div>
-                    <div class="pressure" id="pressure"></div>
-                    <div class="feels-like" id="feels-like"></div>    
+                    <div class="humidity" id="humidity">❄️</div>
+                    <div class="pressure" id="pressure">❄️</div>
+                    <div class="feels-like" id="feels-like">❄️</div>    
                 </div>
                 <div class="wind" id="wind">
                 </div>
+                <section class="section-input">
+                        <div class="autocomplete-wrapper scrollbar" id="autocomplete-wrapper">
+                            <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>    
+                            <!-- <ul class="autocomplete-list" id="country-list">
+                                <li>
+                                    <button>
+                                        <li>Fetching Countries..</li>
+                                    </button>
+                            </ul>  -->
+                            <button type="submit" id="search-button" class="search-button" >Search</button>
+                        </div>
+                        <h2>Get the latest weather updates</h2>
+                        <input type="checkbox" class="checkbox" checked id="checkbox"/>
+                        <label for="checkbox" class="ferenheit">Fahrenheit</label>             
+                </section>
             </div>
         </div>
 
@@ -71,8 +92,10 @@
             </p>
         </footer>
     </div>
+    
 
     <script type="text/javascript" src="../scripts/fetchCountries.js"></script>
     <script type="text/javascript" src="../scripts/fetchWeather.js"></script>
+    <script type="text/javascript" src="../scripts/favoriteItems.js"></script>
 </body>
 </html>
