@@ -24,7 +24,8 @@ const fetchWeather = (city) => {
     .then(response => response.json())
     .then(data => {
         displayWeather(data);
-    });
+    })
+    .catch(console.error("Couldn't find city/country"));
 }
 
 const displayWeather = (data) => {

@@ -324,6 +324,23 @@ footer{
   justify-content: center;
 }
 
+@media only screen and (max-width: 900px){
+  .flex-container-description{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-button{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .section-input input{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+
 .slogan{
   font-family: 'Josefin Sans', sans-serif;
 }
@@ -338,6 +355,14 @@ footer{
   accent-color: plum;
   margin-top: 20px;
   margin-bottom: -100px;
+}
+
+.checkbox-favorite{
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  accent-color: rgb(240, 180, 69);
+  margin-right: 20px;
 }
 
 .ferenheit{

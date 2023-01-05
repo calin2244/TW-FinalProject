@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>weather</title>
-    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/home.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
 </head>
 
@@ -59,18 +59,19 @@
                     <img src="" alt="" class="icon" id="icon"/>
                 </div>  
                 <div class="weather-description" id="weather-description">
-                    Type any city/country in the input field above.
+                    Type any city/country in the input field below.
                 </div>
 
                 <div class="flex-container-description">    
-                    <div class="humidity" id="humidity">❄️</div>
-                    <div class="pressure" id="pressure">❄️</div>
-                    <div class="feels-like" id="feels-like">❄️</div>    
+                    <div class="humidity" id="humidity">🌸</div>
+                    <div class="pressure" id="pressure">🌸</div>
+                    <div class="feels-like" id="feels-like">🌸</div>    
                 </div>
                 <div class="wind" id="wind">
                 </div>
                 <section class="section-input">
                         <div class="autocomplete-wrapper scrollbar" id="autocomplete-wrapper">
+                            <input type="checkbox" class="checkbox-favorite" id="favorite"/>
                             <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>    
                             <!-- <ul class="autocomplete-list" id="country-list">
                                 <li>
@@ -87,11 +88,11 @@
             </div>
         </div>
 
-        <footer>
+        <!-- <footer>
             <p class="credits">
                 Calin's Weather Map
             </p>
-        </footer>
+        </footer> -->
     </div>
     
 
