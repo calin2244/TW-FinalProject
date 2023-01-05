@@ -35,16 +35,16 @@ const displayWeather = (data) => {
     const { speed } = data.wind;
     const { country } = data.sys;
 
-    console.log(checkBox.checked);
+    // console.log(checkBox.checked);
 
     var index = 0;
     for(let i = 0; i < countryCode.length; i++){
         if(countryCode[i] === country){
-            console.log("AM GASIT: ", country);
+            //console.log("AM GASIT: ", country);
             break;
         }
         else{
-            index = index + 1
+            index = index + 1;
         }
     }
 
@@ -88,7 +88,7 @@ const checkBox = document.querySelector("#checkbox");
 checkBox.checked = false;
 document.querySelector(".ferenheit").style.color = "white";
 
-console.log(checkBox.checked);
+// console.log(checkBox.checked);
 
 checkBox.addEventListener("click", function(){
     if(!checkBox.checked){

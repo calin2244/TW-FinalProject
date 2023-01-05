@@ -265,8 +265,15 @@ footer{
   color: plum;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.1rem;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   font-size: 46px;
+}
+
+.time{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .temp{
