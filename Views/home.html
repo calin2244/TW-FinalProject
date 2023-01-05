@@ -33,6 +33,8 @@
         </nav>
     </header>
     <div class="container">
+        
+
         <main>
             <!-- <section class="section-input">
                 <h2>Get the latest weather updates</h2>
@@ -47,45 +49,54 @@
                         <button type="submit" id="search-button" class="search-button" >Search</button>
                     </div>
             </section> -->
+            <!-- <ul class="display-fav" style="font-size: 32px; margin-right: 0px" id="favorite-list">Lista</ul> -->
         </main>
-        <div class="card">
-            <div class="weather">
-                <h2 class="city" id="city" style="color: white">
-                    Your weather, anywhere in the world
-                </h2>
-                <h3 class="time" id="time"></h3>
-                <div class="flex-container">
-                    <div class="temp" id="temperature"></div>
-                    <img src="" alt="" class="icon" id="icon"/>
-                </div>  
-                <div class="weather-description" id="weather-description">
-                    Type any city/country in the input field below.
-                </div>
-
-                <div class="flex-container-description">    
-                    <div class="humidity" id="humidity">🌸</div>
-                    <div class="pressure" id="pressure">🌸</div>
-                    <div class="feels-like" id="feels-like">🌸</div>    
-                </div>
-                <div class="wind" id="wind">
-                </div>
-                <section class="section-input">
-                        <div class="autocomplete-wrapper scrollbar" id="autocomplete-wrapper">
-                            <input type="checkbox" class="checkbox-favorite" id="favorite"/>
-                            <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>    
-                            <!-- <ul class="autocomplete-list" id="country-list">
-                                <li>
-                                    <button>
-                                        <li>Fetching Countries..</li>
-                                    </button>
-                            </ul>  -->
-                            <button type="submit" id="search-button" class="search-button" >Search</button>
-                        </div>
-                        <h2>Get the latest weather updates</h2>
-                        <input type="checkbox" class="checkbox" checked id="checkbox"/>
-                        <label for="checkbox" class="ferenheit">Fahrenheit</label>             
-                </section>
+        <div class="flex-card-container">
+            <div class="favorites-card">
+                <h1 class="fav-title">⭐Favorites⭐</h1>  
+                <ul class="fav-list" style="font-size: 32px; margin-right: 0px" id="favorite-list">
+                    <h1 style="font-size: 20px; text-align: center; font-family: 'Josefin Sans'" id="loading-favorites">Loading favorites...</h1>
+                </ul>
             </div>
+            <div class="card">
+                <div class="weather">
+                    <h2 class="city" id="city" style="color: white">
+                        Your weather, anywhere in the world
+                    </h2>
+                    <h3 class="time" id="time"></h3>
+                    <div class="flex-container">
+                        <div class="temp" id="temperature"></div>
+                        <img src="" alt="" class="icon" id="icon"/>
+                    </div>  
+                    <div class="weather-description" id="weather-description">
+                        Type any city/country in the input field below.
+                    </div>
+    
+                    <div class="flex-container-description">    
+                        <div class="humidity" id="humidity">🌸</div>
+                        <div class="pressure" id="pressure">🌸</div>
+                        <div class="feels-like" id="feels-like">🌸</div>    
+                    </div>
+                    <div class="wind" id="wind">
+                    </div>
+                    <section class="section-input">
+                        <input type="checkbox" class="checkbox-favorite" id="favorite"/>
+                            <div class="autocomplete-wrapper scrollbar" id="autocomplete-wrapper">
+                                <input type="text" placeholder="Enter a city/country" id="country-input" class="search-input"/>    
+                                <!-- <ul class="autocomplete-list" id="country-list">
+                                    <li>
+                                        <button>
+                                            <li>Fetching Countries..</li>
+                                        </button>
+                                </ul>  -->
+                                <button type="submit" id="search-button" class="search-button" >Search</button>
+                            </div>
+                            <h2>Get the latest weather updates</h2>
+                            <input type="checkbox" class="checkbox" checked id="checkbox"/>
+                            <label for="checkbox" class="ferenheit">Fahrenheit</label>             
+                    </section>
+                </div>
+            </div>    
         </div>
 
         <!-- <footer>

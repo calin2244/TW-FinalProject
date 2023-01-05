@@ -18,7 +18,10 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin-left: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
   padding: 0 20px;
   /* background-color: #1D1D37; */
 }
@@ -266,7 +269,7 @@ footer{
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.1rem;
   padding-bottom: 20px;
-  font-size: 46px;
+  font-size: 42px;
 }
 
 .time{
@@ -330,6 +333,10 @@ footer{
     gap: 10px;
   }
 
+  .flex-card-container{
+    flex-direction: column;
+  }
+
   .search-button{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -362,7 +369,7 @@ footer{
   height: 20px;
   width: 20px;
   accent-color: rgb(240, 180, 69);
-  margin-right: 20px;
+  margin: auto;
 }
 
 .ferenheit{
@@ -371,4 +378,49 @@ footer{
   display: block;
   margin-bottom: -20px;
   color: plum;
+}
+
+.flex-card-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.favorites-card{
+  background-color: black;
+  border: 2px solid black;
+  display: inline-block;
+  color: white;
+  margin-top: -20px;
+  padding: 20px 5rem 0rem 5rem;
+  border-radius: 15px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  max-height: 1200px;
+  margin-right: 100px;
+}
+
+.fav-title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 42px;
+}
+
+.fav-list{
+  margin-top: 20px;
+  overflow-y: auto;
+  max-height: 45vh;
+}
+
+.fav-list li{
+  padding: 0.5rem;
+  border-bottom: 2px solid white;
+  font-family: 'Josefin Sans', sans-serif;
+  max-width: 1200px;
+  cursor: pointer;
+}
+
+.fav-list li > div{
+  display: inline; padding-left: 30px;
+}
+
+.fav list li > div > img{
+  display: inline;
 }

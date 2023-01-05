@@ -30,7 +30,7 @@ const fetchWeather = (city) => {
 
 const displayWeather = (data) => {
 
-    const {name} = data;
+    const { name } = data;
     const { icon, description } = data.weather[0];
     let { temp, humidity, pressure, feels_like } = data.main;
     const { speed } = data.wind;

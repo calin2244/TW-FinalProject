@@ -6,7 +6,6 @@
 // timeElement.textContent = "";
 
 // const fetchLatAndLong = (input) => {
-
 //     fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" 
 //     + input  
 //     + "&key="
@@ -45,6 +44,6 @@
 // }
 
 // if(timeElement.textContent != "")
-//     document.querySelector("#search-button").addEventListener("click", fetchLatAndLong(inputElement.value));
+//     searchButton.addEventListener("click", fetchLatAndLong(inputElement.value));
 
-// //document.querySelector("#search-button").addEventListener("click", fetchLatAndLong);
+// // searchButton.addEventListener("click", fetchLatAndLong(inputElement.value));
