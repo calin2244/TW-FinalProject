@@ -20,7 +20,7 @@ const fetchFavWeather = (city) => {
         const divFav = document.createElement("div");
         const imgIcon = new Image();
         imgIcon.src = "http://openweathermap.org/img/wn/" + icon + ".png";
-        divFav.textContent = Math.ceil(temp) + "℃";
+        divFav.textContent = Math.floor(temp) + "℃";
         divFav.appendChild(imgIcon);
 
         // const deleteButton = document.createElement("button");
