@@ -157,13 +157,7 @@ main{
 footer{
   position: absolute;
   display: flex;
-  justify-content: baseline;
-  bottom: 0;
-  object-fit: cover;
-
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+  justify-content: center;
   background-color: #333;
   color: #fff;
   text-align: center;
@@ -435,11 +429,16 @@ footer{
 }
 
 .checkbox-favorite{
-  display: inline;
+  display: absolute;
+  bottom: 0;
   height: 20px;
   width: 20px;
   accent-color: rgb(240, 180, 69);
   margin-left: -20px;
+}
+
+.fav-checkbox-label{
+  color: rgb(240, 180, 69);
 }
 
 .ferenheit{
@@ -449,6 +448,7 @@ footer{
   margin-bottom: -20px;
   color: plum;
 }
+
 
 .flex-card-container{
   display: flex;
@@ -495,6 +495,20 @@ footer{
   background-repeat: no-repeat;
 }
 
+/* .button-holder{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.sort-button{
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  height: 30px;
+  margin: auto;
+} */
+
 @media only screen and (max-width: 800px){
   .flex-card-container{
     flex-direction: column;
@@ -516,7 +530,7 @@ footer{
 .fav-list{
   margin-top: 20px;
   overflow-y: auto;
-  max-height: 49vh;
+  max-height: 42vh;
   max-width: 600px;
   width: 120%;
   padding-right: 5px;
@@ -574,7 +588,7 @@ footer{
   border-radius: 15px;
   max-width: 1200px;
   height: 25vh;
-  margin-bottom: 120px;
+  margin-bottom: 20px;
 }
 
 .five-days-forecast div{
@@ -584,3 +598,63 @@ footer{
   flex: 1;
   margin: auto;
 }
+
+@media only screen and (max-width: 800px){
+  .five-days-forecast{
+    flex-direction: column;
+  }
+}
+
+.dropbtn {
+  background-color: #5e24b2;
+  border-radius: 15px;
+  border: 2px solid black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: white;
+  color: #5e24b2;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  text-align: center;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: 50px;
+  border-radius: 15px;
+  border-bottom: 1px solid plum;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.dropdown-content h1 {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  border-bottom: 2px solid plum;
+}
+
+.dropdown h1:hover {background-color: #ddd;}
+
+.show {display: block;}

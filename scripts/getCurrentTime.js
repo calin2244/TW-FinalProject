@@ -18,8 +18,7 @@ const fetchLatAndLong = (input) => {
         currentLat = location.geometry.location.lat;
         currentLong = location.geometry.location.lng;
         console.log(currentLat, currentLong);
-        if(cityExists)
-            getTime(currentLat, currentLong);
+        getTime(currentLat, currentLong);
     })
     .catch(error =>{
         timeElement.textContent = "Couldn't fetch TIME for " + input + ".";
@@ -44,7 +43,13 @@ const getTime = (latitude, longitude) =>{
         const minutes = localTime.getMinutes() < 10 ? "0" + localTime.getMinutes().toString() : localTime.getMinutes().toString();
 
         const timeString = "🕒" + hours +  ":" + minutes + "🕒";
-        timeElement.textContent = timeString;
+
+        if(cityExists)
+            timeElement.textContent = timeString;
+        else{
+            timeElement.textContent = "Couldn't fetch TIME for " + input + ".";
+            timeElement.style.color = "rgb(205, 74, 74)";
+        }
 
         console.log(timeString);
     });
