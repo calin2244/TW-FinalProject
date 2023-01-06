@@ -13,12 +13,19 @@ const fetchLatAndLong = (input) => {
     .then(response => response.json())
     .then(data =>{
         timeElement.textContent = "Fetching local time...";
+        timeElement.style.color = "white";
         const location = data.results[0];
         currentLat = location.geometry.location.lat;
         currentLong = location.geometry.location.lng;
         console.log(currentLat, currentLong);
-        getTime(currentLat, currentLong);
-    });
+        if(cityExists)
+            getTime(currentLat, currentLong);
+    })
+    .catch(error =>{
+        timeElement.textContent = "Couldn't fetch TIME for " + input + ".";
+        timeElement.style.color = "rgb(205, 74, 74)";
+    }
+    );
 }
 
 const getTime = (latitude, longitude) =>{

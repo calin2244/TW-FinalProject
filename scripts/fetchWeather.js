@@ -3,6 +3,8 @@ const API_KEY = "6696c79e8a8d1c412209a68814af3154";
 let flagEmojis = [];
 let countryCode = [];
 
+let cityExists = true;
+
 const fetchFlagsAndCountryCode = () => {
     fetch("https://restcountries.com/v3.1/all")
     .then(response => response.json())
@@ -23,9 +25,23 @@ const fetchWeather = (city) => {
     )
     .then(response => response.json())
     .then(data => {
+        console.log('fetchuieste');
         displayWeather(data);
     })
-    .catch(console.error("Couldn't find city/country"));
+    .catch(error => {
+        cityExists = false;
+        document.querySelector("#city").style.visibility = "hidden";
+        document.querySelector("#temperature").innerText = "";
+        document.querySelector("#icon").src = "";
+        document.querySelector("#weather-description").innerText = "City/Country doesn't exist.";
+        document.querySelector("#weather-description").style.textTransform = "uppercase";        
+        document.querySelector("#weather-description").style.textDecoration = "none";        
+        document.querySelector("#humidity").innerText = "❌";
+        document.querySelector("#pressure").innerText = "❌";
+        document.querySelector("#feels-like").innerText = "❌";
+        document.querySelector("#wind").innerText = "";
+    
+    });
 }
 
 const displayWeather = (data) => {
@@ -64,11 +80,15 @@ const displayWeather = (data) => {
         feels_like = feels_like * 1.8 + 32;
     }
 
+    cityExists = true;
 
     // console.log(name, icon, description, temp, humidity, speed, feels_like, pressure);
+    document.querySelector("#city").style.visibility = "visible";
     document.querySelector("#city").innerText = currentFlag + "Weather in " + articol + name + currentFlag;
     document.querySelector("#temperature").innerText = Math.floor(temp) + tempSymbol;
     document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+    document.querySelector("#weather-description").style.textTransform = "none";        
+    document.querySelector("#weather-description").style.textDecoration = "underline";        
     document.querySelector("#weather-description").innerText = "How is it outside: " + description.toUpperCase();
     document.querySelector("#humidity").innerText = "Humidity: " + humidity;
     document.querySelector("#pressure").innerText = "Pressure: " + pressure + " atm";
