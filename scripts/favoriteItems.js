@@ -49,7 +49,6 @@ const showFavoriteItems = () => {
 
 const removeFavoriteList = () => {
     const listEl = document.querySelectorAll("#fav-li");
-    console.log(listEl.innerHTML);
     if(listEl){
         listEl.forEach(x => {
             x.remove();
@@ -106,7 +105,7 @@ favoriteList.addEventListener("click", function(){
     var listEl = document.querySelectorAll("#fav-li");
     for(var i = 0; i < listEl.length; i++){
         listEl[i].onclick = function(){
-            inputElement.value = this.innerText.replace(/[0-9]/g, '').replace("℃", '');
+            inputElement.value = this.innerText.replace(/[0-9]/g, '').replace("℃", '').replace("-", '');
             favoriteButton.checked = true;
             fetchWeather(inputElement.value);
             fetchLatAndLong(inputElement.value);

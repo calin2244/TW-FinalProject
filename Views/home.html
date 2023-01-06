@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>weather</title>
     <link rel="stylesheet" type="text/css" href="../styles/home.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/loading.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
 </head>
 
 <body>
+    
     <header>
         <h1>Weather App</h1>
         <h2>
@@ -65,7 +67,7 @@
                     <h1 style="font-size: 20px; text-align: center; font-family: 'Josefin Sans'" id="loading-favorites">Loading favorites...</h1>
                 </ul>
             </div>
-            <div class="card">
+            <div class="card" id="main-card">
                 <div class="weather">
                     <h2 class="city" id="city" style="color: white">
                         Your weather, anywhere in the world
@@ -77,6 +79,8 @@
                     </div>  
                     <div class="weather-description" id="weather-description">
                         Type any city/country in the input field below.
+                    </div>
+                    <div style="display: flex; justify-content: center; margin-bottom: 20px;" id="loading-div">
                     </div>
     
                     <div class="flex-container-description">    

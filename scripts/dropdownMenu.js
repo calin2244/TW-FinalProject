@@ -18,22 +18,26 @@ if (!event.target.matches('.dropbtn')) {
 const dropdown = document.querySelector("#myDropdown");
 const headers = dropdown.querySelectorAll("h1");
 
+
 headers.forEach(header =>{
     header.addEventListener("click", () =>{
-    if(header.textContent = "sort alphabetically"){
-        favoriteHeader.style.visibility = "visible";
-        favoriteItemsStored.sort((a, b) => {
-            if (a < b) {
-                return -1;
-            }
-            if (a > b) {
-                return 1;
-            }
-            return 0;
-        });
-        console.log(favoriteItemsStored);
-        removeFavoriteList();
-        showFavoriteItems();
-    }
-});
+        if(header.textContent === "sort alphabetically"){
+            favoriteHeader.style.visibility = "visible";
+            favoriteItemsStored.sort((a, b) => {
+                if (a < b) {
+                    return -1;
+                }
+                if (a > b) {
+                    return 1;
+                }
+                return 0;
+            });
+            
+            removeFavoriteList();
+            showFavoriteItems();
+        }
+        else{
+            console.log('o');
+        }
+    })
 });

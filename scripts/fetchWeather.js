@@ -5,6 +5,8 @@ let countryCode = [];
 
 let cityExists = true;
 
+const loadingDiv = document.querySelector("#loading-div");
+
 const fetchFlagsAndCountryCode = () => {
     fetch("https://restcountries.com/v3.1/all")
     .then(response => response.json())
@@ -16,16 +18,19 @@ const fetchFlagsAndCountryCode = () => {
 
 fetchFlagsAndCountryCode();
 
-
-const fetchWeather = (city) => {
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
+async function fetchWeatherJSON(city){
+    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
     + city
     + "&units=metric&appid="
     + API_KEY
-    )
-    .then(response => response.json())
+    );
+    const data = await response.json();
+    return data;
+}
+
+const fetchWeather = (city) => {
+    fetchWeatherJSON(city)
     .then(data => {
-        console.log('fetchuieste');
         displayWeather(data);
     })
     .catch(error => {
@@ -82,6 +87,19 @@ const displayWeather = (data) => {
 
     cityExists = true;
 
+    // <div class="row cf">
+    //     <div class="span">
+    //         <div class="help"></div>
+    //     </div>
+    // </div>
+    const divSpanChild = document.createElement("div");
+    divSpanChild.className = "span";
+    const helpLoadingAnimation = document.createElement("div");
+    helpLoadingAnimation.classList = "help";
+    divSpanChild.append(helpLoadingAnimation);
+
+    loadingDiv.append(divSpanChild);
+
     // console.log(name, icon, description, temp, humidity, speed, feels_like, pressure);
     document.querySelector("#city").style.visibility = "visible";
     document.querySelector("#city").innerText = currentFlag + "Weather in " + articol + name + currentFlag;
@@ -95,8 +113,7 @@ const displayWeather = (data) => {
     document.querySelector("#feels-like").innerText = "Feels like: " + Math.ceil(feels_like) + tempSymbol;
     document.querySelector("#wind").innerText = "Wind speed: " + speed + "km/h" + "🌬️";
     
-    //Loading
-    document.querySelector(".weather").classList.remove("weather-fetching");
+    divSpanChild.remove();
 }
 
 const searchButton = () => {
