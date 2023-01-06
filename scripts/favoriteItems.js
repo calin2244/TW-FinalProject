@@ -17,16 +17,24 @@ const fetchFavWeather = (city) => {
         let { temp } = data.main;
         const favElement = document.createElement("li");
         favElement.id = "fav-li";
-        favElement.textContent = city;
         const divFav = document.createElement("div");
         const imgIcon = new Image();
         imgIcon.src = "http://openweathermap.org/img/wn/" + icon + ".png";
-        divFav.textContent = Math.ceil(temp);
+        divFav.textContent = Math.ceil(temp) + "℃";
         divFav.appendChild(imgIcon);
-        favElement.appendChild(divFav);
-        favoriteHeader.style.visibility = "hidden";
-        favoriteList.appendChild(favElement);
 
+        // const deleteButton = document.createElement("button");
+
+        // deleteButton.innerText = "Del";
+        // deleteButton.id = "delete-button";
+        // favElement.append(deleteButton);
+
+        favElement.innerText = city;
+
+        favElement.appendChild(divFav);
+        
+        favoriteList.appendChild(favElement);
+        favoriteHeader.style.visibility = "hidden";
     })
     .catch(console.error("Couldn't find city/country"));
 }
@@ -98,9 +106,10 @@ favoriteList.addEventListener("click", function(){
     var listEl = document.querySelectorAll("#fav-li");
     for(var i = 0; i < listEl.length; i++){
         listEl[i].onclick = function(){
-            inputElement.value = this.innerText.replace(/[0-9]/g, '');
+            inputElement.value = this.innerText.replace(/[0-9]/g, '').replace("℃", '');
+            favoriteButton.checked = true;
             fetchWeather(inputElement.value);
-            //fetchLatAndLong(inputElement.value);
+            fetchLatAndLong(inputElement.value);
         };
     }
 });

@@ -96,6 +96,6 @@ inputElement.addEventListener("keypress", function(event){
     if(event.key === "Escape" || event.key === "Enter"){
         event.preventDefault();
         document.querySelector("#search-button").click();
-        //fetchLatAndLong(inputElement.value);
+        fetchLatAndLong(inputElement.value);
     }
 });

@@ -71,9 +71,9 @@ const displayWeather = (data) => {
     document.querySelector("#icon").src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector("#weather-description").innerText = "How is it outside: " + description.toUpperCase();
     document.querySelector("#humidity").innerText = "Humidity: " + humidity;
-    document.querySelector("#pressure").innerText = "Pressure: " + pressure + " kPa";
+    document.querySelector("#pressure").innerText = "Pressure: " + pressure + " atm";
     document.querySelector("#feels-like").innerText = "Feels like: " + Math.ceil(feels_like) + tempSymbol;
-    document.querySelector("#wind").innerText = "Speed of wind: " + speed + "km/h" + "🌬️";
+    document.querySelector("#wind").innerText = "Wind speed: " + speed + "km/h" + "🌬️";
     
     //Loading
     document.querySelector(".weather").classList.remove("weather-fetching");
