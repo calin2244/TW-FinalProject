@@ -97,5 +97,6 @@ inputElement.addEventListener("keypress", function(event){
         event.preventDefault();
         document.querySelector("#search-button").click();
         fetchLatAndLong(inputElement.value);
+        getForecast(inputElement.value);
     }
 });

@@ -38,7 +38,7 @@ const fetchWeather = (city) => {
         document.querySelector("#city").style.visibility = "hidden";
         document.querySelector("#temperature").innerText = "";
         document.querySelector("#icon").src = "";
-        document.querySelector("#weather-description").innerText = "City/Country doesn't exist.";
+        document.querySelector("#weather-description").innerText = "City/Country doesn't exist. We are currently loading nothing 😐";
         document.querySelector("#weather-description").style.textTransform = "uppercase";        
         document.querySelector("#weather-description").style.textDecoration = "none";        
         document.querySelector("#humidity").innerText = "❌";
@@ -92,6 +92,7 @@ const displayWeather = (data) => {
     //         <div class="help"></div>
     //     </div>
     // </div>
+    
     const divSpanChild = document.createElement("div");
     divSpanChild.className = "span";
     const helpLoadingAnimation = document.createElement("div");

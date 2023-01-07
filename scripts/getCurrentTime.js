@@ -12,7 +12,8 @@ const fetchLatAndLong = (input) => {
     + MAPS_API_KEY)
     .then(response => response.json())
     .then(data =>{
-        timeElement.textContent = "Fetching local time...";
+        //timeElement.textContent = "Fetching local time...";
+        timeElement.textContent = "";
         timeElement.style.color = "white";
         const location = data.results[0];
         currentLat = location.geometry.location.lat;
@@ -29,6 +30,13 @@ const fetchLatAndLong = (input) => {
 
 const getTime = (latitude, longitude) =>{
     
+    const divSpanChild = document.createElement("div");
+    divSpanChild.className = "span";
+    const helpLoadingAnimation = document.createElement("div");
+    helpLoadingAnimation.classList = "help";
+    divSpanChild.append(helpLoadingAnimation);
+    timeElement.append(divSpanChild);
+    
     fetch(`https://maps.googleapis.com/maps/api/timezone/json?location=${latitude.toFixed(2)},${longitude.toFixed(2)}&timestamp=${Date.now() / 1000}&key=${MAPS_API_KEY}`)
     .then(response => response.json())
     .then(data => {
@@ -44,14 +52,10 @@ const getTime = (latitude, longitude) =>{
 
         const timeString = "🕒" + hours +  ":" + minutes + "🕒";
 
-        if(cityExists)
+        if(cityExists){
+            divSpanChild.remove();
             timeElement.textContent = timeString;
-        else{
-            timeElement.textContent = "Couldn't fetch TIME for " + input + ".";
-            timeElement.style.color = "rgb(205, 74, 74)";
         }
-
-        console.log(timeString);
     });
 }
 
