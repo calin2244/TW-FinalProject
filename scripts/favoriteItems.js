@@ -1,4 +1,6 @@
 let favoriteItemsStored = JSON.parse(localStorage.getItem("favItems")) || [];
+
+//am fi putut crea un set..
 let favoriteItems = [];
 
 const favoriteButton = document.querySelector("#favorite");
@@ -69,7 +71,7 @@ const removeFavoriteList = () => {
 //verificam daca orasul exista si poate fi bagat la favorite
 
 const addToFavorites = () => {
-    if(favoriteButton.checked && inputElement.value != ""){
+    if(favoriteButton.checked && inputElement.value !== ""){
         favoriteItems.push(inputElement.value);
     }
 }

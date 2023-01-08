@@ -9,7 +9,7 @@ for(let i = 0; i < 5; ++i){
   document.querySelector("#day" + (i+1) + "Min").textContent = "";
   document.querySelector("#day" + (i+1) + "Max").style.paddingTop = "15px";
   document.querySelector("#day" + (i+1) + "Max").textContent = "";
-
+  
   let loadingEl = document.createElement("div");
   loadingEl.style.paddingTop = "40px";
   loadingEl.style.fontFamily = "Josefin Sans";

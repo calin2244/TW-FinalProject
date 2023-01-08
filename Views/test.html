@@ -5,22 +5,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>weather</title>
-    <link rel="stylesheet" type="text/css" href="../styles/loading.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/rain.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
 </head>
 
 <!-- check the Comments for more info -->
 
-<body>
+<body class="back-row-toggle splat-toggle">
+    <div class="rain front-row"></div>
+    <div class="rain back-row"></div>
+    <div class="toggles">
+      <div class="splat-toggle toggle active">SPLAT</div>
+      <div class="back-row-toggle toggle active">BACK<br>ROW</div>
+      <div class="single-toggle toggle">SINGLE</div>
+    </div>
 
-        <div class="row cf">
-            <div class="span">
-                <div class="help"></div>
-            </div>
-        </div>
-
-
-
-    <script src="../scripts/rain.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../scripts/rain.js"></script>
+    
+  </body>
 </html>

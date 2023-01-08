@@ -7,12 +7,14 @@
     <title>Calin's Weather</title>
     <link rel="stylesheet" type="text/css" href="../styles/home.css" />
     <link rel="stylesheet" type="text/css" href="../styles/loading.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/rain.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁️</text></svg>">
 </head>
 
 <body>
     
+    <div class="rain front-row"></div>
     <header>
         <h1>Weather App</h1>
         <h2>
@@ -163,12 +165,13 @@
         </footer> 
     </div>
     
-
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="../scripts/fetchCountries.js"></script>
     <script type="text/javascript" src="../scripts/fetchWeather.js"></script>
     <script type="text/javascript" src="../scripts/favoriteItems.js"></script>
     <script type="text/javascript" src="../scripts/getCurrentTime.js"></script>
     <script type="text/javascript" src="../scripts/dropdownMenu.js"></script>
     <script type="text/javascript" src="../scripts/fiveDayForecast.js"></script>
+    <script src="../scripts/rain.js"></script>
 </body>
 </html>
