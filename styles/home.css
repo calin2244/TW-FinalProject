@@ -36,7 +36,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #333;
+  background-color: rgb(36, 42, 42);
   color: #fff;
   width: 100%;
 }
@@ -163,7 +163,7 @@ footer{
   position: absolute;
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: rgb(36, 42, 42);
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -176,8 +176,6 @@ footer{
 }
 
 .credits{
-  display: flex;
-  justify-content: right;
   text-decoration: underline;
 }
 
@@ -552,7 +550,8 @@ footer{
 }
 
 .fav-list li > div{
-  display: inline; padding-left: 30px;
+  display: inline; 
+  padding-left: 30px;
 }
 
 .fav-list li > div > img{
@@ -629,7 +628,7 @@ footer{
 
   /* BORDER */
   position: relative;
-  border-left: 4px solid #522b65;
+  /* border-left: 4px solid #522b65; */
   height: 90%;
 }
 

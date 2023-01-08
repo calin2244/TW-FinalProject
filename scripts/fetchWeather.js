@@ -18,7 +18,7 @@ const fetchFlagsAndCountryCode = () => {
 
 fetchFlagsAndCountryCode();
 
-async function fetchWeatherJSON(city){
+const fetchWeatherJSON = async (city) =>{
     const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
     + city
     + "&units=metric&appid="
@@ -45,6 +45,16 @@ const fetchWeather = (city) => {
         document.querySelector("#pressure").innerText = "❌";
         document.querySelector("#feels-like").innerText = "❌";
         document.querySelector("#wind").innerText = "";
+
+        //fiveDayForecast
+        for(let i = 0; i < 5; ++i){
+            document.querySelector("#weekDay" + (i+1)).textContent = "";
+            document.querySelector("#weekImg" + (i+1)).src = "";
+            document.querySelector("#day" + (i+1) + "Min").textContent = "";
+            document.querySelector("#day" + (i+1) + "Max").textContent = "";
+        }
+
+        document.querySelector("#weekDay3").textContent = "Please provide a valid input.";
     
     });
 }
@@ -72,6 +82,8 @@ const displayWeather = (data) => {
     }
 
     let currentFlag = typeof flagEmojis[index] === "undefined" ? "" : flagEmojis[index];
+    if(name === "Italy")
+        currentFlag = "🇮🇹";
 
     var element = document.querySelector("#city");
     element.style.color = null;
@@ -110,7 +122,7 @@ const displayWeather = (data) => {
     document.querySelector("#weather-description").style.textTransform = "none";        
     document.querySelector("#weather-description").style.textDecoration = "underline";        
     document.querySelector("#weather-description").innerText = "How is it outside: " + description.toUpperCase();
-    document.querySelector("#humidity").innerText = "Humidity: " + humidity;
+    document.querySelector("#humidity").innerText = "Humidity: " + humidity + "%";
     document.querySelector("#pressure").innerText = "Pressure: " + pressure + " atm";
     document.querySelector("#feels-like").innerText = "Feels like: " + Math.ceil(feels_like) + tempSymbol;
     document.querySelector("#wind").innerText = "Wind speed: " + speed + "km/h" + "🌬️";
@@ -120,6 +132,8 @@ const displayWeather = (data) => {
 
 const searchButton = () => {
     fetchWeather(document.querySelector("#country-input").value);
+    getForecast(inputElement.value);
+    fetchLatAndLong(inputElement.value);
 }
 
 document.querySelector("#search-button").addEventListener("click", searchButton);

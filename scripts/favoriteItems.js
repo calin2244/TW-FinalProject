@@ -5,6 +5,8 @@ const favoriteButton = document.querySelector("#favorite");
 const favoriteList = document.querySelector("#favorite-list");
 const favoriteHeader = document.querySelector("#loading-favorites");
 
+
+
 const fetchFavWeather = (city) => {
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
     + city
@@ -39,12 +41,20 @@ const fetchFavWeather = (city) => {
     .catch(console.error("Couldn't find city/country"));
 }
 
-const showFavoriteItems = () => {
+const showFavoriteItems = () => { 
 
+    if(favoriteItemsStored.length == 0){
+        sortButton.style.opacity = "0";
+        favoriteHeader.textContent = "No items currently. Add them favorites in order to see them here.";
+    }
+    else{
+        sortButton.style.opacity = "1";
+        favoriteHeader.textContent = "Loading favorites...";
+    } 
+    
     favoriteItemsStored.forEach(x => {
         fetchFavWeather(x);
     });
-    console.log(favoriteItemsStored);
 }
 
 const removeFavoriteList = () => {
@@ -56,11 +66,12 @@ const removeFavoriteList = () => {
     }
 }
 
+//verificam daca orasul exista si poate fi bagat la favorite
+
 const addToFavorites = () => {
     if(favoriteButton.checked && inputElement.value != ""){
         favoriteItems.push(inputElement.value);
     }
-
 }
 
 inputElement.addEventListener('input', () => {
@@ -86,7 +97,6 @@ favoriteButton.addEventListener("click", () => {
         favoriteItemsStored.splice(index, 1);
         localStorage.setItem("favItems", JSON.stringify(favoriteItemsStored));
     }
-
 });
 
 showFavoriteItems();

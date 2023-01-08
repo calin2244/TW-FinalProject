@@ -91,7 +91,7 @@ const onEntryClick = (event) => {
 
 document.querySelector("#search-button").addEventListener("click", removeAutocompleteDropdown);
 
-inputElement.addEventListener("keypress", function(event){
+inputElement.addEventListener("keypress", (event) => {
 
     if(event.key === "Escape" || event.key === "Enter"){
         event.preventDefault();

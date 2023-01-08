@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>weather</title>
+    <title>Calin's Weather</title>
     <link rel="stylesheet" type="text/css" href="../styles/home.css" />
     <link rel="stylesheet" type="text/css" href="../styles/loading.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁️</text></svg>">
 </head>
 
 <body>
@@ -57,7 +58,7 @@
             <div class="favorites-card">
                 <h1 class="fav-title">⭐Favorites⭐</h1>
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Sort Content</button>
+                    <button onclick="myFunction()" class="dropbtn" id="sortButton">Sort Content</button>
                     <div id="myDropdown" class="dropdown-content">
                         <h1>sort alphabetically</h1>
                         <h1>sort after temperature</h1>

@@ -1,3 +1,7 @@
+const dropdown = document.querySelector("#myDropdown");
+const headers = dropdown.querySelectorAll("h1");
+const sortButton = document.querySelector("#sortButton");
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -14,10 +18,6 @@ if (!event.target.matches('.dropbtn')) {
     }
 }
 } 
-
-const dropdown = document.querySelector("#myDropdown");
-const headers = dropdown.querySelectorAll("h1");
-
 
 headers.forEach(header =>{
     header.addEventListener("click", () =>{
