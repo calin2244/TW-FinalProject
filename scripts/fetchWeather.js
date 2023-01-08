@@ -59,7 +59,8 @@ const displayWeather = (data) => {
 
     // console.log(checkBox.checked);
 
-    var index = 0;
+    let index = 0;
+
     for(let i = 0; i < countryCode.length; i++){
         if(countryCode[i] === country){
             //console.log("AM GASIT: ", country);
@@ -70,7 +71,7 @@ const displayWeather = (data) => {
         }
     }
 
-    const currentFlag = flagEmojis[index];
+    let currentFlag = typeof flagEmojis[index] === "undefined" ? "" : flagEmojis[index];
 
     var element = document.querySelector("#city");
     element.style.color = null;
