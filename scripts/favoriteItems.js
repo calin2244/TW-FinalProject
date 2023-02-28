@@ -8,7 +8,6 @@ const favoriteList = document.querySelector("#favorite-list");
 const favoriteHeader = document.querySelector("#loading-favorites");
 
 
-
 const fetchFavWeather = (city) => {
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
     + city
@@ -120,6 +119,7 @@ favoriteList.addEventListener("click", function(){
             inputElement.value = this.innerText.replace(/[0-9]/g, '').replace("℃", '').replace("-", '');
             favoriteButton.checked = true;
             fetchWeather(inputElement.value);
+            getForecast(inputElement.value);
             fetchLatAndLong(inputElement.value);
         };
     }
