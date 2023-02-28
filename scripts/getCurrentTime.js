@@ -1,4 +1,4 @@
-const MAPS_API_KEY = "AIzaSyAVucAHadzWSJ6v-cco1D3InVezkjqhbCI";
+const MAPS_API_KEY = "API_KEY";
 
 let currentLat;
 let currentLong;
