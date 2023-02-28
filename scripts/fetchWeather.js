@@ -1,4 +1,4 @@
-const API_KEY = "6696c79e8a8d1c412209a68814af3154";
+const API_KEY = "API_KEY";
 
 let flagEmojis = [];
 let countryCode = [];
