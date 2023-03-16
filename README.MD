@@ -1,3 +1,14 @@
+<div id = "header" align = "center">
+  <img src = "https://avatars.githubusercontent.com/u/95591065?v=4" width = 90/>
+  <div id="badges">
+  <a href="https://www.linkedin.com/in/calin-basturea-349a15234/">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  </div>
+</div>
+
+<h2 align="center"> TW-FinalProject - A Weather Web App </h2>
+
 ![image](https://user-images.githubusercontent.com/95591065/221981746-30336c39-1f2a-44e7-b0be-2dfc5b7e0546.png)
 
 # Weather viewer application
